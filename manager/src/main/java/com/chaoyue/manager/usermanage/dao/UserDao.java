@@ -1,6 +1,6 @@
 package com.chaoyue.manager.usermanage.dao;
 
-import com.chaoyue.common.base.mapper.BaseMapper;
+import com.chaoyue.common.base.mapper.BaseDao;
 import com.chaoyue.manager.usermanage.model.UserModel;
 import org.springframework.stereotype.Repository;
 
@@ -10,5 +10,5 @@ import org.springframework.stereotype.Repository;
  * Describe:
  */
 @Repository
-public interface UserDao extends BaseMapper<UserModel> {
+public interface UserDao extends BaseDao<UserModel> {
 }

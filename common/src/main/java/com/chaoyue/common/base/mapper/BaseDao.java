@@ -1,5 +1,6 @@
 package com.chaoyue.common.base.mapper;
 
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.chaoyue.common.base.model.BaseModel;
 
 /**
@@ -7,5 +8,5 @@ import com.chaoyue.common.base.model.BaseModel;
  * Create by:xuzhichao
  * Describe:
  */
-public interface BaseMapper<T extends BaseModel> extends com.baomidou.mybatisplus.core.mapper.BaseMapper<T> {
+public interface BaseDao<T extends BaseModel> extends BaseMapper<T> {
 }
