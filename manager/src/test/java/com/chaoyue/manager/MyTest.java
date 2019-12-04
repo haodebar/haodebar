@@ -2,6 +2,7 @@ package com.chaoyue.manager;
 
 import com.chaoyue.manager.usermanage.model.UserModel;
 import com.chaoyue.manager.usermanage.service.UserService;
+import java.util.Date;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -20,6 +21,17 @@ public class MyTest {
     void Save(){
         UserModel userModel = new UserModel();
         userModel.setPhone("123");
+        userModel.setEmail("1234@QQ.COM");
+        userModel.setUserName("xuzhichao");
+        userModel.setCreateName("1123");
+        userModel.setCreateTime(new Date());
+        userModel.setCreateUser(1l);
+
+        userModel.setModifyName("11");
+        userModel.setModifyTime(new Date());
+        userModel.setModifyUser(3l);
+        userModel.setVersion("1256666");
+        userModel.setEnable(1l);
         userService.save(userModel);
     }
 }
