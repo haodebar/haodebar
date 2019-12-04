@@ -6,4 +6,7 @@ package com.chaoyue.common.base;
  * Describe:
  */
 public class TestClass {
+    public TestClass() {
+        System.out.println("这是构造方法");
+    }
 }
