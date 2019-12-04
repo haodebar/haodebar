@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
  * Create by:xuzhichao
  * Describe:
  */
-@RestController
+@RestController("userManager")
 public class UserController {
 
 }
