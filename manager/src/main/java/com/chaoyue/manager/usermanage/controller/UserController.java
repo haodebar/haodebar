@@ -1,5 +1,7 @@
 package com.chaoyue.manager.usermanage.controller;
 
+import com.chaoyue.manager.usermanage.api.UserControllerApi;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -8,6 +10,11 @@ import org.springframework.web.bind.annotation.RestController;
  * Describe:
  */
 @RestController("userManager")
-public class UserController {
+public class UserController implements UserControllerApi {
 
+    @Override
+    @PostMapping("saveData")
+    public void SaveData() {
+        System.out.println("我进入方法");
+    }
 }
