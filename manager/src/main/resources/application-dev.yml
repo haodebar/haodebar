@@ -4,3 +4,16 @@ spring:
     url: jdbc:mysql://192.168.126.101:3306/haodebar?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&autoReconnect=true&useSSL=false
     username: root
     password: 123456
+
+    redis:
+      database: 0
+      host: 127.0.0.1
+      port: 6379
+    # redis服务器的登录密码 没有可以不配置
+      password:
+      lettuce:
+        max-active: 8
+        max-idle: 8
+        max-wait: -1
+        min-idle: 0
+      timeout: 100
