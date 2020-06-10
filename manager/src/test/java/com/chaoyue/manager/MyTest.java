@@ -3,8 +3,6 @@ package com.chaoyue.manager;
 import com.chaoyue.manager.usermanage.model.UserModel;
 import com.chaoyue.manager.usermanage.service.UserService;
 import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -42,16 +40,8 @@ public class MyTest {
 
     @Test
     public void testRedis(){
-        redisTemplate.opsForValue().set("sdf","xzc");
-        Map map =new HashMap();
-        map.put("真的1","整的");
-        map.put("真的2","2");
-        map.put("真的3",map);
-        try {
-            redisTemplate.opsForSet().add("sdf1",map);
-        }catch (Exception e){
-            throw e;
-        }
+        redisTemplate.opsForValue().set("许智超","xzc");
+
 
 
         System.out.println();

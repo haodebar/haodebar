@@ -588,9 +588,9 @@ public class DateUtil{
      * @return null时返回false;true为日期，false不为日期
      */
     public static boolean validateIsDate(String strTime) {
-        if (strTime == null || strTime.trim().length() <= 0)
+        if (strTime == null || strTime.trim().length() <= 0) {
             return false;
-
+        }
         Date date = null;
         List<String> list = new ArrayList<String>(0);
 
