@@ -17,7 +17,7 @@
     <properties>
         <java.version>1.8</java.version>
         <swagger.version>2.9.2</swagger.version>
-        <mysql.version>8.0.18</mysql.version>
+        <mysql.version>8.0.28</mysql.version>
         <mybatisplus.spring.boot.version>3.1.0</mybatisplus.spring.boot.version>
         <lombok.version>1.18.14</lombok.version>
     </properties>
