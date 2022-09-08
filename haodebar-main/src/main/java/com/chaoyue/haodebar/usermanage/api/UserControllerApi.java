@@ -1,5 +1,6 @@
 package com.chaoyue.haodebar.usermanage.api;
 
+import com.chaoyue.haodebar.usermanage.model.UserModel;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
@@ -11,5 +12,5 @@ import io.swagger.annotations.ApiOperation;
 @Api(tags = "用户管理")
 public interface UserControllerApi {
     @ApiOperation(value = "用户新增",notes = "用新增接口")
-    void SaveData();
+    UserModel SaveData();
 }
