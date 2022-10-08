@@ -12,5 +12,5 @@ import io.swagger.annotations.ApiOperation;
 @Api(tags = "用户管理")
 public interface UserControllerApi {
     @ApiOperation(value = "用户新增",notes = "用新增接口")
-    UserModel SaveData();
+    UserModel saveData();
 }
