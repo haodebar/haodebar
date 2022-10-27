@@ -11,9 +11,12 @@ import org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
 
 /**
- * Date:2019/12/6
- * Create by:xuzhichao
- * Describe:
+ * Created by IntelliJ IDEA.
+ *
+ * @author: xuzhichao
+ * @date: 2022/10/8 16:38
+ * @version: version 1.0
+ * @dec: 描述信息
  */
 @Configuration
 public class RedisConfig {

@@ -7,11 +7,13 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 
 /**
- * Date:2019/12/9
- * Create by:xuzhichao
- * Describe:
+ * Created by IntelliJ IDEA.
+ *
+ * @author: xuzhichao
+ * @date: 2022/10/8 16:38
+ * @version: version 1.0
+ * @dec: 描述信息
  */
-
 public class DateUtil{
 
     // ==格式到年==
@@ -21,7 +23,6 @@ public class DateUtil{
     public static final String DATE_FORMAT_YYYY = "yyyy";
 
 
-    // ==格式到年月 ==
     /**
      * 日期格式，年份和月份，例如：200707，200808
      */

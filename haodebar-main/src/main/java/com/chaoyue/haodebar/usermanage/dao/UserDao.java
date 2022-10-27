@@ -5,9 +5,12 @@ import com.chaoyue.haodebar.usermanage.model.UserModel;
 import org.springframework.stereotype.Repository;
 
 /**
- * @Date:2019/12/4
- * @author :xuzhichao
- * @Describe:
+ * Created by IntelliJ IDEA.
+ *
+ * @author: xuzhichao
+ * @date: 2022/10/8 16:38
+ * @version: version 1.0
+ * @dec: 描述信息
  */
 @Repository
 public interface UserDao extends BaseDao<UserModel> {

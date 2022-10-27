@@ -12,9 +12,12 @@ import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 /**
- * @Date:2019/12/5
- * @author :xuzhichao
- * @Describe:
+ * Created by IntelliJ IDEA.
+ *
+ * @author: xuzhichao
+ * @date: 2022/10/8 16:38
+ * @version: version 1.0
+ * @dec: 描述信息
  */
 @Configuration
 @EnableSwagger2

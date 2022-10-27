@@ -7,9 +7,12 @@ import com.chaoyue.haodebar.usermanage.service.UserService;
 import org.springframework.stereotype.Service;
 
 /**
- * Date:2019/12/4
- * Create by:xuzhichao
- * Describe:
+ * Created by IntelliJ IDEA.
+ *
+ * @author: xuzhichao
+ * @date: 2022/10/8 16:38
+ * @version: version 1.0
+ * @dec: 描述信息
  */
 @Service
 public class UserServiceImpl extends BaseServiceImpl<UserDao, UserModel> implements UserService {

@@ -1,16 +1,23 @@
 package com.chaoyue.haodebar.usermanage.api;
 
+import com.chaoyue.common.utils.Result;
+import com.chaoyue.haodebar.usermanage.domain.UserReqDto;
 import com.chaoyue.haodebar.usermanage.model.UserModel;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
 /**
- * Date:2019/12/5
- * Create by:xuzhichao
- * Describe:
+ * Created by IntelliJ IDEA.
+ *
+ * @author: xuzhichao
+ * @date: 2022/10/8 16:38
+ * @version: version 1.0
+ * @dec: 描述信息
  */
 @Api(tags = "用户管理")
 public interface UserControllerApi {
-    @ApiOperation(value = "用户新增",notes = "用新增接口")
-    UserModel saveData();
+    @ApiOperation(value = "用户新增",notes = "用户新增接口")
+    Result<UserModel> saveData();
+    @ApiOperation(value = "用户删除",notes = "用户删除接口")
+    Result<Boolean> deleteUser(UserReqDto userReqDto);
 }
