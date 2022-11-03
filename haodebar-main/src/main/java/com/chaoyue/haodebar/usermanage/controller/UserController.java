@@ -1,11 +1,14 @@
 package com.chaoyue.haodebar.usermanage.controller;
 
+import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
+import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.chaoyue.common.utils.Result;
 import com.chaoyue.haodebar.usermanage.api.UserControllerApi;
 import com.chaoyue.haodebar.usermanage.domain.UserReqDto;
 import com.chaoyue.haodebar.usermanage.model.UserModel;
 import com.chaoyue.haodebar.usermanage.service.UserService;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -51,4 +54,10 @@ public class UserController implements UserControllerApi {
         return Result.createOK(userService.removeById(userReqDto.getUserId()));
     }
 
+    @Override
+    @PostMapping("modifyUser")
+    public Result<Boolean> modifyUser(UserReqDto userReqDto) {
+        log.info("enter modifyUser controller,param={}",userReqDto);
+        return null;
+    }
 }

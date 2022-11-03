@@ -23,7 +23,7 @@ public class BaseModel implements Serializable {
     /**
      * 数据库主键
      */
-    @TableId()
+    @TableId(type = IdType.AUTO)
     private Long id;
     /**
      * 创建人id

@@ -16,8 +16,26 @@ import io.swagger.annotations.ApiOperation;
  */
 @Api(tags = "用户管理")
 public interface UserControllerApi {
+    /**
+     * 用户新增接口
+     * @return
+     */
     @ApiOperation(value = "用户新增",notes = "用户新增接口")
     Result<UserModel> saveData();
+
+    /**
+     * 用户删除接口
+     * @param userReqDto
+     * @return
+     */
     @ApiOperation(value = "用户删除",notes = "用户删除接口")
     Result<Boolean> deleteUser(UserReqDto userReqDto);
+
+    /**
+     * 用户修改接口
+     * @param userReqDto
+     * @return
+     */
+    @ApiOperation(value = "用户修改",notes = "用户修改接口")
+    Result<Boolean> modifyUser(UserReqDto userReqDto);
 }
