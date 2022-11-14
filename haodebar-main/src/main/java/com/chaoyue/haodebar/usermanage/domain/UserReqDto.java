@@ -1,6 +1,7 @@
 package com.chaoyue.haodebar.usermanage.domain;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.NonNull;
 
 /**
@@ -12,6 +13,7 @@ import lombok.NonNull;
  * @dec: 请求参数
  */
 @Data
+@NoArgsConstructor
 public class UserReqDto {
     @NonNull
     private Long userId;

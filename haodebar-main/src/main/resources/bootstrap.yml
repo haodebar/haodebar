@@ -1,0 +1,62 @@
+spring:
+  application:
+    # 项目（微服务）名称
+    name: haodebar
+  cloud:
+    nacos:
+      # nacos用户名
+      username: nacos
+      # nacos用户密码
+      password: nacos
+      # nacos服务器地址
+      server-addr: 127.0.0.1:8848
+      # nacos配置中心相关
+      config:
+        # 开启nacos作为配置中心，默认值：true
+        enabled: true
+        # 作为配置中心的nacos服务器地址，默认值：${spring.cloud.nacos:server-addr}
+        #server-addr: 127.0.0.1:8848
+        # 配置文件读取的nacos命名空间ID，默认值：public
+        namespace: 742dced6-2eb9-4700-8cbc-20ecd396edc8
+        # 配置文件在nacos命名空间中的分组，默认值：DEFAULT_GROUP
+        #group: DEFAULT_GROUP
+        # 配置文件的文件前缀（配置文件名称），默认值：${spring.application.name}
+        prefix: ${spring.application.name}
+        # 配置文件的文件后缀（文件类型），默认值：properties
+        file-extension: yaml
+        # 配置内容的编码方式，默认值：UTF-8
+        encode: UTF-8
+        # 获取配置的超时时间，单位：ms，默认值：3000
+        timeout: 3000
+        # 开启监听和自动刷新，动态感知配置变化，默认值：true
+        refresh-enabled: true
+        # AccessKey
+        #access-key: 123
+        # SecretKey
+        #secret-key: 123
+        # 引入共享配置（同一分组）
+        #shared-configs:
+          # 配置支持共享的 Data Id
+          #- data-id: haodebar-dev.yaml
+            # 配置 Data Id 所在分组，缺省默认 DEFAULT_GROUP
+            #group: DEFAULT_GROUP
+            # 配置Data Id 在配置变更时，是否动态刷新，缺省默认 false
+            #refresh: true
+        # 引入扩展配置（同一分组或不同分组）
+        extension-configs:
+          # 配置支持共享的 Data Id
+          - data-id: haodebar-dev.yaml
+            # 配置 Data Id 所在分组，缺省默认 DEFAULT_GROUP
+            group: DEFAULT_GROUP
+            # 配置Data Id 在配置变更时，是否动态刷新，缺省默认 false
+            refresh: true
+      # nacos注册中心相关
+      discovery:
+        # 开启nacos作为服务注册中心，默认值：true
+        enabled: true
+        # 作为注册中心的nacos服务器地址，默认值：${spring.cloud.nacos:server-addr}
+        #server-addr: 10.0.7.115:18117
+        # 服务注册在nacso上的命名空间ID，默认值：public
+        namespace: 742dced6-2eb9-4700-8cbc-20ecd396edc8
+  profiles:
+    active: dev

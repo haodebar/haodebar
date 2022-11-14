@@ -5,6 +5,7 @@ import com.chaoyue.haodebar.usermanage.domain.UserReqDto;
 import com.chaoyue.haodebar.usermanage.model.UserModel;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import org.springframework.web.bind.annotation.RequestBody;
 
 /**
  * Created by IntelliJ IDEA.
@@ -29,7 +30,7 @@ public interface UserControllerApi {
      * @return
      */
     @ApiOperation(value = "用户删除",notes = "用户删除接口")
-    Result<Boolean> deleteUser(UserReqDto userReqDto);
+    Result<Boolean> deleteUser(@RequestBody UserReqDto userReqDto);
 
     /**
      * 用户修改接口
@@ -37,5 +38,5 @@ public interface UserControllerApi {
      * @return
      */
     @ApiOperation(value = "用户修改",notes = "用户修改接口")
-    Result<Boolean> modifyUser(UserReqDto userReqDto);
+    Result<Boolean> modifyUser(@RequestBody UserReqDto userReqDto);
 }

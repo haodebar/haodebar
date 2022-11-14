@@ -1,5 +1,6 @@
 package com.chaoyue.haodebar.config;
 
+import com.github.xiaoymin.knife4j.spring.annotations.EnableKnife4j;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -17,10 +18,14 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
  * @author: xuzhichao
  * @date: 2022/10/8 16:38
  * @version: version 1.0
- * @dec: 描述信息
+ * @dec:
+ * 3.0.x访问地址：http://localhost:8080/{context-path}/swagger-ui/index.html
+ * 2.9.x访问地址：http://localhost:8080/{context-path}/swagger-ui.html
+ * knife4j访问地址:http://localhost::8080/{context-path}/doc.html
  */
 @Configuration
 @EnableSwagger2
+@EnableKnife4j
 public class SwaggerConfig {
 
     @Bean
@@ -35,7 +40,7 @@ public class SwaggerConfig {
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("测试") //标题
+                .title("测试")
                 .description("Create by Alan Di")
                 .version("1.0")
                 .build();
