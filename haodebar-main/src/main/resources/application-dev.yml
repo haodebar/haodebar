@@ -1,0 +1,39 @@
+#spring:
+#  datasource:
+#    driverClassName: com.mysql.cj.jdbc.Driver
+#    url: jdbc:mysql://localhost:3306/haodebar?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&autoReconnect=true&useSSL=false&serverTimezone=Asia/Shanghai
+#    username: root
+#    password: 123456
+#  redis:
+#    database: 0
+#    host: 127.0.0.1
+#    port: 6379
+#    # redis服务器的登录密码 没有可以不配置
+#    password:
+#    lettuce:
+#      max-active: 8
+#      max-idle: 8
+#      max-wait: -1
+#      min-idle: 0
+#    timeout: 100
+#  cloud:
+#    stream:
+#      bindings:
+#        #配置自己定义的通道与哪个中间件交互
+#        input: #MessageChannel里Input和Output的值
+#          destination: test #目标主题 相当于kafka的topic
+#        output:
+#          destination: test1 #本例子创建了另外一个topic （test1）用于区分不同的功能区分。
+#      default-binder: kafka #默认的binder是kafka
+#  kafka:
+#    binder:
+#      #zk服务地址，集群部署的时候需要配置多个，
+#      zk-nodes: localhost:2181,localhost:2182,localhost:2183
+#    #kafka服务地址，集群部署的时候需要配置多个，
+#    bootstrap-servers: localhost:9092,localhost:9093,localhost:9094
+#    consumer:
+#      group-id: consumer1
+#    producer:
+#      key-serializer: org.apache.kafka.common.serialization.ByteArraySerializer
+#      value-serializer: org.apache.kafka.common.serialization.ByteArraySerializer
+#      client-id: producer1

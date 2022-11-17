@@ -4,6 +4,7 @@ import com.alibaba.nacos.api.config.annotation.NacosValue;
 import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.chaoyue.common.utils.Result;
+import com.chaoyue.haodebar.mq.MqProcessor;
 import com.chaoyue.haodebar.usermanage.api.UserControllerApi;
 import com.chaoyue.haodebar.usermanage.domain.UserReqDto;
 import com.chaoyue.haodebar.usermanage.model.UserModel;
@@ -35,13 +36,12 @@ public class UserController implements UserControllerApi {
     private UserService userService;
     @Resource
     private RedisTemplate redisTemplate;
-    @Value("${test.name}")
-    private String userName;
 
+    @Resource
+    private MqProcessor mqProcessor;
     @Override
     @PostMapping ("/saveData")
     public Result<UserModel> saveData() {
-        log.info(userName);
         UserModel model = new UserModel();
         model.setVersion("版本");
         model.setUserName("许智超");
@@ -49,6 +49,7 @@ public class UserController implements UserControllerApi {
         model.setPhone("18810440946");
         redisTemplate.opsForValue().set("xzctset",1);
         userService.save(model);
+        mqProcessor.send("我来了");
         return Result.createOK(model);
     }
 

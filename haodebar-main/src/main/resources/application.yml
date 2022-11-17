@@ -2,3 +2,6 @@ server:
   port: 8080
   servlet:
     context-path: /haodebar
+logging:
+  file:
+    path: D:\xuzhichao8
