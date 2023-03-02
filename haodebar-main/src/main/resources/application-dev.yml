@@ -16,24 +16,32 @@
 #      max-wait: -1
 #      min-idle: 0
 #    timeout: 100
-#  cloud:
-#    stream:
-#      bindings:
-#        #配置自己定义的通道与哪个中间件交互
-#        input: #MessageChannel里Input和Output的值
-#          destination: test #目标主题 相当于kafka的topic
-#        output:
-#          destination: test1 #本例子创建了另外一个topic （test1）用于区分不同的功能区分。
-#      default-binder: kafka #默认的binder是kafka
 #  kafka:
 #    binder:
 #      #zk服务地址，集群部署的时候需要配置多个，
 #      zk-nodes: localhost:2181,localhost:2182,localhost:2183
 #    #kafka服务地址，集群部署的时候需要配置多个，
-#    bootstrap-servers: localhost:9092,localhost:9093,localhost:9094
-#    consumer:
-#      group-id: consumer1
+#    bootstrap-servers: localhost:9092
 #    producer:
-#      key-serializer: org.apache.kafka.common.serialization.ByteArraySerializer
+#      acks: -1
+#      retries: 1
+#      batch-size: 16384
+#      buffer-memory: 33554432
+#      key-serializer: org.apache.kafka.common.serialization.StringSerializer
 #      value-serializer: org.apache.kafka.common.serialization.ByteArraySerializer
-#      client-id: producer1
+#    consumer:
+#      enable-auto-commit: true
+#      auto-commit-interval: 1000
+#  cloud:
+#    stream:
+#      bindings:
+#        #配置自己定义的通道与哪个中间件交互
+#        steam-input: #MessageChannel里Input和Output的值
+#          destination: xzc #目标主题 相当于kafka的topic
+#          binder: kafka
+#        steam-output:
+#          destination: xzc #本例子创建了另外一个topic （test1）用于区分不同的功能区分。
+#          binder: kafka
+#      default-binder: kafka #默认的binder是kafka
+#
+#

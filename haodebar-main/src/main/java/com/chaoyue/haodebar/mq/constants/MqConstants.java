@@ -12,9 +12,9 @@ public class MqConstants {
     /**
      * 默认生产者通道
      */
-    public static final String DEFAULT_OUTPUT="output";
+    public static final String DEFAULT_OUTPUT="stream-output";
     /**
      * 默认消费者通道
      */
-    public static final String DEFAULT_INPUT="input";
+    public static final String DEFAULT_INPUT="stream-input";
 }

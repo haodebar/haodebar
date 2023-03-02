@@ -3,7 +3,6 @@ package com.chaoyue.haodebar.mq.consumer;
 import com.chaoyue.haodebar.mq.constants.MqConstants;
 import org.springframework.cloud.stream.annotation.Input;
 import org.springframework.messaging.SubscribableChannel;
-import org.springframework.stereotype.Component;
 
 /**
  * Created by IntelliJ IDEA.
@@ -13,8 +12,7 @@ import org.springframework.stereotype.Component;
  * @version: version 1.0
  * @dec: 描述信息
  */
-@Component
-public interface MessageConsumer {
+public interface MessageConsumerChannel {
     /**
      * 消费消息
      * @return

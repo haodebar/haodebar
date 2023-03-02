@@ -3,7 +3,6 @@ package com.chaoyue.haodebar.mq.producer;
 import com.chaoyue.haodebar.mq.constants.MqConstants;
 import org.springframework.cloud.stream.annotation.Output;
 import org.springframework.messaging.MessageChannel;
-import org.springframework.stereotype.Component;
 
 /**
  * Created by IntelliJ IDEA.
@@ -13,8 +12,7 @@ import org.springframework.stereotype.Component;
  * @version: version 1.0
  * @dec: 描述信息
  */
-@Component
-public interface MessageProducer {
+public interface MessageProducerChannel {
     /**
      * 生产消息
      *

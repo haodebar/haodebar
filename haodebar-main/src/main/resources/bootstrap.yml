@@ -15,7 +15,7 @@ spring:
         # 开启nacos作为配置中心，默认值：true
         enabled: true
         # 作为配置中心的nacos服务器地址，默认值：${spring.cloud.nacos:server-addr}
-        #server-addr: 127.0.0.1:8848
+        server-addr: 127.0.0.1:8848
         # 配置文件读取的nacos命名空间ID，默认值：public
         namespace: 742dced6-2eb9-4700-8cbc-20ecd396edc8
         # 配置文件在nacos命名空间中的分组，默认值：DEFAULT_GROUP
@@ -55,8 +55,10 @@ spring:
         # 开启nacos作为服务注册中心，默认值：true
         enabled: true
         # 作为注册中心的nacos服务器地址，默认值：${spring.cloud.nacos:server-addr}
-        #server-addr: 10.0.7.115:18117
+        #server-addr: 127.0.0.1:8848
         # 服务注册在nacso上的命名空间ID，默认值：public
         namespace: 742dced6-2eb9-4700-8cbc-20ecd396edc8
+        ip: 127.0.0.1
+        port: 8848
   profiles:
     active: dev

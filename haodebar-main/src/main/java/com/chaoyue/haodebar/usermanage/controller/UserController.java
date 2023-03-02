@@ -1,18 +1,12 @@
 package com.chaoyue.haodebar.usermanage.controller;
 
-import com.alibaba.nacos.api.config.annotation.NacosValue;
-import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
-import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.chaoyue.common.utils.Result;
-import com.chaoyue.haodebar.mq.MqProcessor;
+import com.chaoyue.haodebar.mq.MqProducerProcessor;
 import com.chaoyue.haodebar.usermanage.api.UserControllerApi;
 import com.chaoyue.haodebar.usermanage.domain.UserReqDto;
 import com.chaoyue.haodebar.usermanage.model.UserModel;
 import com.chaoyue.haodebar.usermanage.service.UserService;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.BeanUtils;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -38,7 +32,7 @@ public class UserController implements UserControllerApi {
     private RedisTemplate redisTemplate;
 
     @Resource
-    private MqProcessor mqProcessor;
+    private MqProducerProcessor mqProcessor;
     @Override
     @PostMapping ("/saveData")
     public Result<UserModel> saveData() {
