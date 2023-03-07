@@ -1,30 +1,29 @@
 package com.chaoyue.haodebar.usermanage.model;
 
-import com.baomidou.mybatisplus.annotation.TableName;
 import com.chaoyue.common.annotation.sensitive.Sensitive;
 import com.chaoyue.common.annotation.sensitive.SensitiveTypeEnum;
-import com.chaoyue.common.base.model.BaseModel;
 import lombok.Data;
+import org.springframework.data.annotation.Id;
 import org.springframework.data.elasticsearch.annotations.Document;
+import org.springframework.data.elasticsearch.annotations.Field;
 
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: xuzhichao
- * @date: 2022/10/8 16:38
+ * @author: xuzhichao8
+ * @date: 2023/3/7 16:46
  * @version: version 1.0
  * @dec: 描述信息
  */
+@Document(indexName = "test")
 @Data
-@TableName("manage_user")
-public class UserModel extends BaseModel {
-    private static final long serialVersionUID = -6157193063523644981L;
-
-    @Sensitive(type = SensitiveTypeEnum.NAME)
+public class UserElasticModel {
+    @Id
+    private Long id;
+    @Field
     private String userName;
-    @Sensitive(type = SensitiveTypeEnum.NAME)
+    @Field
     private String phone;
-    @Sensitive(type = SensitiveTypeEnum.NAME)
+    @Field
     private String email;
-
 }

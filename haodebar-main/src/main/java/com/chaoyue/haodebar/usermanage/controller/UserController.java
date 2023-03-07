@@ -1,12 +1,16 @@
 package com.chaoyue.haodebar.usermanage.controller;
 
 import com.chaoyue.common.utils.Result;
+import com.chaoyue.haodebar.usermanage.model.UserElasticModel;
+import com.chaoyue.haodebar.utils.ElasticSearchUtils;
 import com.chaoyue.haodebar.mq.MqProducerProcessor;
 import com.chaoyue.haodebar.usermanage.api.UserControllerApi;
 import com.chaoyue.haodebar.usermanage.domain.UserReqDto;
 import com.chaoyue.haodebar.usermanage.model.UserModel;
 import com.chaoyue.haodebar.usermanage.service.UserService;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.BeanUtils;
+import org.springframework.data.elasticsearch.core.ElasticsearchRestTemplate;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -30,6 +34,10 @@ public class UserController implements UserControllerApi {
     private UserService userService;
     @Resource
     private RedisTemplate redisTemplate;
+    @Resource
+    private ElasticSearchUtils elasticSearchUtils;
+    @Resource
+    private ElasticsearchRestTemplate restTemplate;
 
     @Resource
     private MqProducerProcessor mqProcessor;
@@ -42,6 +50,15 @@ public class UserController implements UserControllerApi {
         model.setEmail("xzc@qq.com");
         model.setPhone("18810440946");
         redisTemplate.opsForValue().set("xzctset",1);
+        try {
+            elasticSearchUtils.creatIndex("test1");
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        UserElasticModel userElasticModel =new UserElasticModel();
+        BeanUtils.copyProperties(model,userElasticModel);
+        userElasticModel.setId(10L);
+        restTemplate.save(userElasticModel);
         userService.save(model);
         mqProcessor.send("我来了");
         return Result.createOK(model);
