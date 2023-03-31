@@ -22,7 +22,7 @@
 
         <mybatisplus.spring.boot.version>3.5.2</mybatisplus.spring.boot.version>
         <lombok.version>1.18.24</lombok.version>
-        <jackson.core>2.13.3</jackson.core>
+        <jackson.core>2.13.4.2</jackson.core>
         <commons.lang3>3.12.0</commons.lang3>
 
         <maven.compiler.source>8</maven.compiler.source>
