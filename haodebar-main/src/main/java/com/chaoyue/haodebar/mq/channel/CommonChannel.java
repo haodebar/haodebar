@@ -16,6 +16,7 @@ import org.springframework.messaging.SubscribableChannel;
 public interface CommonChannel {
     String INPUT = "steam-input";
     String OUTPUT = "steam-output";
+    String CANAL = "canal";
 
     /**
      * input
@@ -30,4 +31,11 @@ public interface CommonChannel {
      */
     @Output(OUTPUT)
     MessageChannel produceChannel();
+
+    /**
+     * input
+     * @return SubscribableChannel
+     */
+    @Input(CANAL)
+    SubscribableChannel canalConsumeChannel();
 }

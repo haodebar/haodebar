@@ -55,11 +55,11 @@ public class UserController implements UserControllerApi {
         }catch (Exception e){
             e.printStackTrace();
         }
+        userService.save(model);
         UserElasticModel userElasticModel =new UserElasticModel();
         BeanUtils.copyProperties(model,userElasticModel);
-        userElasticModel.setId(10L);
         restTemplate.save(userElasticModel);
-        userService.save(model);
+
         mqProcessor.send("我来了");
         return Result.createOK(model);
     }

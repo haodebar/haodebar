@@ -28,4 +28,12 @@ public class MqConsumerProcessor {
         }
         //return message;
     }
+
+    @StreamListener(CommonChannel.CANAL)
+    public void canalReceive(String message){
+        if(log.isInfoEnabled()){
+            log.info("receive message {}",message);
+        }
+        //return message;
+    }
 }
