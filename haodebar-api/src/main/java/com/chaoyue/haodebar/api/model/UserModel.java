@@ -1,11 +1,10 @@
-package com.chaoyue.haodebar.usermanage.model;
+package com.chaoyue.haodebar.api.model;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.chaoyue.common.annotation.sensitive.Sensitive;
 import com.chaoyue.common.annotation.sensitive.SensitiveTypeEnum;
 import com.chaoyue.common.base.model.BaseModel;
 import lombok.Data;
-import org.springframework.data.elasticsearch.annotations.Document;
 
 /**
  * Created by IntelliJ IDEA.

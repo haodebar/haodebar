@@ -1,7 +1,7 @@
-package com.chaoyue.haodebar.usermanage.service;
+package com.chaoyue.haodebar.api.service;
 
 import com.chaoyue.common.base.service.BaseService;
-import com.chaoyue.haodebar.usermanage.model.UserModel;
+import com.chaoyue.haodebar.api.model.UserModel;
 
 /**
  * Created by IntelliJ IDEA.

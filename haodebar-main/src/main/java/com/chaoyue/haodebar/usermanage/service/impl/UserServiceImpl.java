@@ -1,9 +1,9 @@
 package com.chaoyue.haodebar.usermanage.service.impl;
 
 import com.chaoyue.common.base.service.impl.BaseServiceImpl;
+import com.chaoyue.haodebar.api.model.UserModel;
 import com.chaoyue.haodebar.usermanage.dao.UserDao;
-import com.chaoyue.haodebar.usermanage.model.UserModel;
-import com.chaoyue.haodebar.usermanage.service.UserService;
+import com.chaoyue.haodebar.api.service.UserService;
 import org.springframework.stereotype.Service;
 
 /**

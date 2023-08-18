@@ -1,4 +1,4 @@
-package com.chaoyue.haodebar.rpc;
+package com.chaoyue.haodebar.api.rpc;
 
 /**
  * Created by IntelliJ IDEA.

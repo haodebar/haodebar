@@ -1,7 +1,7 @@
 package com.chaoyue.haodebar.usermanage.dao;
 
 import com.chaoyue.common.base.mapper.BaseDao;
-import com.chaoyue.haodebar.usermanage.model.UserModel;
+import com.chaoyue.haodebar.api.model.UserModel;
 import org.springframework.stereotype.Repository;
 
 /**

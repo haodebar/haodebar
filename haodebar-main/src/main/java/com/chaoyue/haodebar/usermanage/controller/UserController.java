@@ -1,13 +1,13 @@
 package com.chaoyue.haodebar.usermanage.controller;
 
 import com.chaoyue.common.utils.Result;
+import com.chaoyue.haodebar.api.model.UserModel;
 import com.chaoyue.haodebar.usermanage.model.UserElasticModel;
 import com.chaoyue.haodebar.utils.ElasticSearchUtils;
 import com.chaoyue.haodebar.mq.MqProducerProcessor;
 import com.chaoyue.haodebar.usermanage.api.UserControllerApi;
 import com.chaoyue.haodebar.usermanage.domain.UserReqDto;
-import com.chaoyue.haodebar.usermanage.model.UserModel;
-import com.chaoyue.haodebar.usermanage.service.UserService;
+import com.chaoyue.haodebar.api.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.data.elasticsearch.core.ElasticsearchRestTemplate;
