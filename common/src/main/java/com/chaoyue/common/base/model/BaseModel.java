@@ -1,11 +1,8 @@
 package com.chaoyue.common.base.model;
 
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableId;
 import java.io.Serializable;
 import java.util.Date;
 
-import com.baomidou.mybatisplus.annotation.TableLogic;
 import lombok.Data;
 
 /**
@@ -23,7 +20,6 @@ public class BaseModel implements Serializable {
     /**
      * 数据库主键
      */
-    @TableId(type = IdType.AUTO)
     private Long id;
     /**
      * 创建人id
@@ -56,6 +52,5 @@ public class BaseModel implements Serializable {
     /**
      *有效标志
      */
-    @TableLogic(value = "1",delval = "0")
     private Long enable;
 }

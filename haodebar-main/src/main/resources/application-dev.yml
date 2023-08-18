@@ -51,3 +51,12 @@
 #      default-binder: kafka #默认的binder是kafka
 #
 #
+#mybatis-plus:
+#  global-config:
+#    db-config:
+#      id-type: auto
+#      table-prefix: t_
+#      table-underline: true
+#      logic-delete-field: enable
+#      logic-delete-value: 0
+#      logic-not-delete-value: 1

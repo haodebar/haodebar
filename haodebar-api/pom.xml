@@ -24,16 +24,6 @@
             <scope>compile</scope>
         </dependency>
         <dependency>
-            <groupId>com.baomidou</groupId>
-            <artifactId>mybatis-plus-boot-starter</artifactId>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.baomidou</groupId>
-            <artifactId>mybatis-plus-extension</artifactId>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
             <groupId>com.chaoyue</groupId>
             <artifactId>common</artifactId>
             <version>0.0.1-SNAPSHOT</version>
