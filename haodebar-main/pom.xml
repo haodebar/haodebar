@@ -17,9 +17,10 @@
 
     <properties>
         <swagger.version>3.0.0</swagger.version>
-        <knife4j.version>3.0.2</knife4j.version>
-        <mysql.version>8.0.30</mysql.version>
+        <knife4j.version>3.0.3</knife4j.version>
+        <mysql.version>8.0.33</mysql.version>
         <elasticsearch.version>7.6.2</elasticsearch.version>
+        <redission.verison>3.23.3</redission.verison>
     </properties>
 
     <dependencies>
@@ -124,6 +125,99 @@
             <version>0.0.1-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>
+        <dependency>
+            <groupId>org.redisson</groupId>
+            <artifactId>redisson</artifactId>
+            <version>${redission.verison}</version>
+        </dependency>
     </dependencies>
-
+    <profiles>
+        <!--开发环境-->
+        <profile>
+            <id>dev</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <mvn.spring.cloud.nacos.username>nacos</mvn.spring.cloud.nacos.username>
+                <mvn.spring.cloud.nacos.password>nacos</mvn.spring.cloud.nacos.password>
+                <mvn.spring.cloud.nacos.server-addr>127.0.0.1:8848</mvn.spring.cloud.nacos.server-addr>
+                <mvn.spring.cloud.nacos.config.server-addr>127.0.0.1:8848</mvn.spring.cloud.nacos.config.server-addr>
+                <mvn.spring.cloud.nacos.config.namespace>742dced6-2eb9-4700-8cbc-20ecd396edc8</mvn.spring.cloud.nacos.config.namespace>
+                <mvn.spring.cloud.nacos.discovery.namespace>742dced6-2eb9-4700-8cbc-20ecd396edc8</mvn.spring.cloud.nacos.discovery.namespace>
+                <mvn.spring.cloud.nacos.discovery.ip>127.0.0.1</mvn.spring.cloud.nacos.discovery.ip>
+                <mvn.spring.cloud.nacos.discovery.port>8848</mvn.spring.cloud.nacos.discovery.port>
+            </properties>
+        </profile>
+        <!--测试环境-->
+        <profile>
+            <id>test</id>
+            <properties>
+                <mvn.spring.cloud.nacos.username>nacos</mvn.spring.cloud.nacos.username>
+                <mvn.spring.cloud.nacos.password>nacos</mvn.spring.cloud.nacos.password>
+                <mvn.spring.cloud.nacos.server-addr>127.0.0.1:8848</mvn.spring.cloud.nacos.server-addr>
+                <mvn.spring.cloud.nacos.config.server-addr>127.0.0.1:8848</mvn.spring.cloud.nacos.config.server-addr>
+                <mvn.spring.cloud.nacos.config.namespace>742dced6-2eb9-4700-8cbc-20ecd396edc8</mvn.spring.cloud.nacos.config.namespace>
+                <mvn.spring.cloud.nacos.discovery.namespace>742dced6-2eb9-4700-8cbc-20ecd396edc8</mvn.spring.cloud.nacos.discovery.namespace>
+                <mvn.spring.cloud.nacos.discovery.ip>127.0.0.1</mvn.spring.cloud.nacos.discovery.ip>
+                <mvn.spring.cloud.nacos.discovery.port>8848</mvn.spring.cloud.nacos.discovery.port>
+            </properties>
+        </profile>
+        <!--测试环境-->
+        <profile>
+            <id>test</id>
+            <properties>
+                <mvn.spring.cloud.nacos.username>nacos</mvn.spring.cloud.nacos.username>
+                <mvn.spring.cloud.nacos.password>nacos</mvn.spring.cloud.nacos.password>
+                <mvn.spring.cloud.nacos.server-addr>127.0.0.1:8848</mvn.spring.cloud.nacos.server-addr>
+                <mvn.spring.cloud.nacos.config.server-addr>127.0.0.1:8848</mvn.spring.cloud.nacos.config.server-addr>
+                <mvn.spring.cloud.nacos.config.namespace>742dced6-2eb9-4700-8cbc-20ecd396edc8</mvn.spring.cloud.nacos.config.namespace>
+                <mvn.spring.cloud.nacos.discovery.namespace>742dced6-2eb9-4700-8cbc-20ecd396edc8</mvn.spring.cloud.nacos.discovery.namespace>
+                <mvn.spring.cloud.nacos.discovery.ip>127.0.0.1</mvn.spring.cloud.nacos.discovery.ip>
+                <mvn.spring.cloud.nacos.discovery.port>8848</mvn.spring.cloud.nacos.discovery.port>
+            </properties>
+        </profile>
+        <!--测试环境-->
+        <profile>
+            <id>test</id>
+            <properties>
+                <mvn.spring.cloud.nacos.username>nacos</mvn.spring.cloud.nacos.username>
+                <mvn.spring.cloud.nacos.password>nacos</mvn.spring.cloud.nacos.password>
+                <mvn.spring.cloud.nacos.server-addr>127.0.0.1:8848</mvn.spring.cloud.nacos.server-addr>
+                <mvn.spring.cloud.nacos.config.server-addr>127.0.0.1:8848</mvn.spring.cloud.nacos.config.server-addr>
+                <mvn.spring.cloud.nacos.config.namespace>7038b6c2-1076-4c06-9efe-d6d5e3de2e53</mvn.spring.cloud.nacos.config.namespace>
+                <mvn.spring.cloud.nacos.discovery.namespace>7038b6c2-1076-4c06-9efe-d6d5e3de2e53</mvn.spring.cloud.nacos.discovery.namespace>
+                <mvn.spring.cloud.nacos.discovery.ip>127.0.0.1</mvn.spring.cloud.nacos.discovery.ip>
+                <mvn.spring.cloud.nacos.discovery.port>8848</mvn.spring.cloud.nacos.discovery.port>
+            </properties>
+        </profile>
+        <!--预发环境-->
+        <profile>
+            <id>gray</id>
+            <properties>
+                <mvn.spring.cloud.nacos.username>nacos</mvn.spring.cloud.nacos.username>
+                <mvn.spring.cloud.nacos.password>nacos</mvn.spring.cloud.nacos.password>
+                <mvn.spring.cloud.nacos.server-addr>127.0.0.1:8848</mvn.spring.cloud.nacos.server-addr>
+                <mvn.spring.cloud.nacos.config.server-addr>127.0.0.1:8848</mvn.spring.cloud.nacos.config.server-addr>
+                <mvn.spring.cloud.nacos.config.namespace>6fdaeb63-99fa-4638-a69c-82126454dfbd</mvn.spring.cloud.nacos.config.namespace>
+                <mvn.spring.cloud.nacos.discovery.namespace>6fdaeb63-99fa-4638-a69c-82126454dfbd</mvn.spring.cloud.nacos.discovery.namespace>
+                <mvn.spring.cloud.nacos.discovery.ip>127.0.0.1</mvn.spring.cloud.nacos.discovery.ip>
+                <mvn.spring.cloud.nacos.discovery.port>8848</mvn.spring.cloud.nacos.discovery.port>
+            </properties>
+        </profile>
+        <!--线上环境-->
+        <profile>
+            <id>prod</id>
+            <properties>
+                <mvn.spring.cloud.nacos.username>nacos</mvn.spring.cloud.nacos.username>
+                <mvn.spring.cloud.nacos.password>nacos</mvn.spring.cloud.nacos.password>
+                <mvn.spring.cloud.nacos.server-addr>127.0.0.1:8848</mvn.spring.cloud.nacos.server-addr>
+                <mvn.spring.cloud.nacos.config.server-addr>127.0.0.1:8848</mvn.spring.cloud.nacos.config.server-addr>
+                <mvn.spring.cloud.nacos.config.namespace>cfaf5a72-067b-448c-b77a-fa46ba42c5c4</mvn.spring.cloud.nacos.config.namespace>
+                <mvn.spring.cloud.nacos.discovery.namespace>cfaf5a72-067b-448c-b77a-fa46ba42c5c4</mvn.spring.cloud.nacos.discovery.namespace>
+                <mvn.spring.cloud.nacos.discovery.ip>127.0.0.1</mvn.spring.cloud.nacos.discovery.ip>
+                <mvn.spring.cloud.nacos.discovery.port>8848</mvn.spring.cloud.nacos.discovery.port>
+            </properties>
+        </profile>
+    </profiles>
 </project>

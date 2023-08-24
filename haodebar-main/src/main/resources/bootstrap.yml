@@ -2,22 +2,24 @@ spring:
   application:
     # 项目（微服务）名称
     name: haodebar
+  profiles:
+    active: dev
   cloud:
     nacos:
       # nacos用户名
-      username: nacos
+      username: ${mvn.spring.cloud.nacos.username}
       # nacos用户密码
-      password: nacos
+      password: ${mvn.spring.cloud.nacos.password}
       # nacos服务器地址
-      server-addr: 127.0.0.1:8848
+      server-addr: ${mvn.spring.cloud.nacos.server-addr}
       # nacos配置中心相关
       config:
         # 开启nacos作为配置中心，默认值：true
         enabled: true
         # 作为配置中心的nacos服务器地址，默认值：${spring.cloud.nacos:server-addr}
-        server-addr: 127.0.0.1:8848
+        server-addr: ${mvn.spring.cloud.nacos.config.server-addr}
         # 配置文件读取的nacos命名空间ID，默认值：public
-        namespace: 742dced6-2eb9-4700-8cbc-20ecd396edc8
+        namespace: ${mvn.spring.cloud.nacos.config.namespace}
         # 配置文件在nacos命名空间中的分组，默认值：DEFAULT_GROUP
         #group: DEFAULT_GROUP
         # 配置文件的文件前缀（配置文件名称），默认值：${spring.application.name}
@@ -45,11 +47,17 @@ spring:
         # 引入扩展配置（同一分组或不同分组）
         extension-configs:
           # 配置支持共享的 Data Id
-          - data-id: haodebar-dev.yaml
+          - data-id: haodebar-${spring.profiles.active}.yaml
             # 配置 Data Id 所在分组，缺省默认 DEFAULT_GROUP
             group: DEFAULT_GROUP
             # 配置Data Id 在配置变更时，是否动态刷新，缺省默认 false
             refresh: true
+          - data-id: biz-config-${spring.profiles.active}.yml
+            # 配置 Data Id 所在分组，缺省默认 DEFAULT_GROUP
+            group: DEFAULT_GROUP
+            # 配置Data Id 在配置变更时，是否动态刷新，缺省默认 false
+            refresh: true
+
       # nacos注册中心相关
       discovery:
         # 开启nacos作为服务注册中心，默认值：true
@@ -57,8 +65,6 @@ spring:
         # 作为注册中心的nacos服务器地址，默认值：${spring.cloud.nacos:server-addr}
         #server-addr: 127.0.0.1:8848
         # 服务注册在nacso上的命名空间ID，默认值：public
-        namespace: 742dced6-2eb9-4700-8cbc-20ecd396edc8
-        ip: 127.0.0.1
-        port: 8848
-  profiles:
-    active: dev
+        namespace: ${mvn.spring.cloud.nacos.discovery.namespace}
+        ip: ${mvn.spring.cloud.nacos.discovery.ip}
+        port: ${mvn.spring.cloud.nacos.discovery.port}
