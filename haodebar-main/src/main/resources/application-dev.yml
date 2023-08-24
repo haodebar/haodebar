@@ -60,3 +60,7 @@
 #      logic-delete-field: enable
 #      logic-delete-value: 0
 #      logic-not-delete-value: 1
+
+#spring:
+#  main:
+#    lazy-initialization: true

@@ -2,6 +2,7 @@ package com.chaoyue.haodebar.login.api;
 
 import com.chaoyue.common.utils.Result;
 import com.chaoyue.haodebar.login.controller.UserLoginController;
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
 
@@ -13,6 +14,7 @@ import io.swagger.annotations.ApiOperation;
  * @version: version 1.0
  * @dec: 描述信息
  */
+@Api(tags = "账号登陆")
 public interface UserLoginControllerApi{
     @ApiOperation(value = "用户登陆",notes = "用户登陆")
     Result login();

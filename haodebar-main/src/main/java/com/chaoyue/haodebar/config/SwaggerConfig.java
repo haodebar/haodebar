@@ -40,8 +40,8 @@ public class SwaggerConfig {
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("测试")
-                .description("Create by Alan Di")
+                .title("接口文档")
+                .description("Create by haodebar group")
                 .version("1.0")
                 .build();
     }

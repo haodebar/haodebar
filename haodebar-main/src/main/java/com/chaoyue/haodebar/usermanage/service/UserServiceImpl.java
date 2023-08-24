@@ -1,4 +1,4 @@
-package com.chaoyue.haodebar.usermanage.service.impl;
+package com.chaoyue.haodebar.usermanage.service;
 
 import com.chaoyue.common.base.service.impl.BaseServiceImpl;
 import com.chaoyue.haodebar.api.model.UserModel;

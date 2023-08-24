@@ -8,7 +8,10 @@ import com.chaoyue.haodebar.mq.MqProducerProcessor;
 import com.chaoyue.haodebar.usermanage.api.UserControllerApi;
 import com.chaoyue.haodebar.usermanage.domain.UserReqDto;
 import com.chaoyue.haodebar.api.service.UserService;
+import com.chaoyue.haodebar.utils.MailUtils;
 import lombok.extern.slf4j.Slf4j;
+import org.redisson.api.RLock;
+import org.redisson.api.RedissonClient;
 import org.springframework.beans.BeanUtils;
 import org.springframework.data.elasticsearch.core.ElasticsearchRestTemplate;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -41,9 +44,19 @@ public class UserController implements UserControllerApi {
 
     @Resource
     private MqProducerProcessor mqProcessor;
+    @Resource
+    private RedissonClient redissonClient;
+
+    @Resource
+    private MailUtils mailUtils;
+
     @Override
     @PostMapping ("/saveData")
     public Result<UserModel> saveData() {
+        RLock lock = redissonClient.getLock("aaa");
+        lock.tryLock();
+
+        mailUtils.sendSimpleMail("1352425876@qq.com","test","你是好人");
         UserModel model = new UserModel();
         model.setVersion("版本");
         model.setUserName("许智超");
