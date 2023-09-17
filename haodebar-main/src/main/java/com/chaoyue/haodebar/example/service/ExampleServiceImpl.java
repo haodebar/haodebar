@@ -5,8 +5,11 @@ import com.chaoyue.common.utils.Result;
 import com.chaoyue.haodebar.api.model.ExampleModel;
 import com.chaoyue.haodebar.api.service.ExampleService;
 import com.chaoyue.haodebar.example.dao.ExampleDao;
+import com.chaoyue.haodebar.utils.BizConfigUtils;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+
+import javax.annotation.Resource;
 
 /**
  * Created by IntelliJ IDEA.
@@ -19,11 +22,14 @@ import org.springframework.stereotype.Service;
 @Service
 public class ExampleServiceImpl extends BaseServiceImpl<ExampleDao, ExampleModel> implements ExampleService {
 
-    @Value(value="${test}")
+    @Value(value="test")
     private String testValue;
+
+    @Resource
+    private BizConfigUtils bizConfigUtils;
 
     @Override
     public Result testMethod() {
-        return Result.createOK(testValue);
+        return Result.createOK(bizConfigUtils.getStringValue("test"));
     }
 }
