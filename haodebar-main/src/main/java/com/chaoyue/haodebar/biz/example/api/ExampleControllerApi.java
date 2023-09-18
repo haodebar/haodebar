@@ -1,4 +1,4 @@
-package com.chaoyue.haodebar.example.api;
+package com.chaoyue.haodebar.biz.example.api;
 
 import com.chaoyue.common.utils.Result;
 import io.swagger.annotations.Api;

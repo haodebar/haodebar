@@ -1,4 +1,4 @@
-package com.chaoyue.haodebar.usermanage.domain;
+package com.chaoyue.haodebar.biz.usermanage.domain;
 
 /**
  * Created by IntelliJ IDEA.

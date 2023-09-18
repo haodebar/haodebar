@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<configuration debug="true" scan="false" scanPeriod="30 seconds">
+<!--debug="false"  关闭logback日志-->
+<configuration debug="false" scan="false" scanPeriod="30 seconds">
     <logger name="org.apache.kafka.clients.consumer.internals.ConsumerCoordinator" level="off"/>
     <logger name="org.springframework.cloud.stream.binder.kafka.provisioning.KafkaTopicProvisioner" level="off"/>
     <property name="log.path" value="${LOG_PATH:- }" />

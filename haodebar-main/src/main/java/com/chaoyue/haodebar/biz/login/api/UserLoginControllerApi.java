@@ -1,7 +1,6 @@
-package com.chaoyue.haodebar.login.api;
+package com.chaoyue.haodebar.biz.login.api;
 
 import com.chaoyue.common.utils.Result;
-import com.chaoyue.haodebar.login.controller.UserLoginController;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 

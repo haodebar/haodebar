@@ -1,8 +1,8 @@
-package com.chaoyue.haodebar.example.controller;
+package com.chaoyue.haodebar.biz.example.controller;
 
 import com.chaoyue.common.utils.Result;
 import com.chaoyue.haodebar.api.service.ExampleService;
-import com.chaoyue.haodebar.example.api.ExampleControllerApi;
+import com.chaoyue.haodebar.biz.example.api.ExampleControllerApi;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 

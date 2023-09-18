@@ -1,4 +1,4 @@
-package com.chaoyue.haodebar.usermanage.model;
+package com.chaoyue.haodebar.biz.usermanage.model;
 
 import com.chaoyue.common.annotation.sensitive.Sensitive;
 import com.chaoyue.common.annotation.sensitive.SensitiveTypeEnum;

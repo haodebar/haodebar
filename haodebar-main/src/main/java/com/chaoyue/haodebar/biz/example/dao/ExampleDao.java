@@ -1,4 +1,4 @@
-package com.chaoyue.haodebar.example.dao;
+package com.chaoyue.haodebar.biz.example.dao;
 
 import com.chaoyue.common.base.mapper.BaseDao;
 import com.chaoyue.haodebar.api.model.ExampleModel;

@@ -1,7 +1,7 @@
-package com.chaoyue.haodebar.login.controller;
+package com.chaoyue.haodebar.biz.login.controller;
 
 import com.chaoyue.common.utils.Result;
-import com.chaoyue.haodebar.login.api.UserLoginControllerApi;
+import com.chaoyue.haodebar.biz.login.api.UserLoginControllerApi;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 

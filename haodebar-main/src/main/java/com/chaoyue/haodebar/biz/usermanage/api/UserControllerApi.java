@@ -1,8 +1,8 @@
-package com.chaoyue.haodebar.usermanage.api;
+package com.chaoyue.haodebar.biz.usermanage.api;
 
 import com.chaoyue.common.utils.Result;
 import com.chaoyue.haodebar.api.model.UserModel;
-import com.chaoyue.haodebar.usermanage.domain.UserReqDto;
+import com.chaoyue.haodebar.biz.usermanage.domain.UserReqDto;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.RequestBody;

@@ -1,4 +1,4 @@
-package com.chaoyue.haodebar.usermanage.dao;
+package com.chaoyue.haodebar.biz.usermanage.dao;
 
 import com.chaoyue.common.base.mapper.BaseDao;
 import com.chaoyue.haodebar.api.model.UserModel;
