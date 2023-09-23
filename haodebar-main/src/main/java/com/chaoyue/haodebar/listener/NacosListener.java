@@ -37,15 +37,14 @@ import java.util.stream.Collectors;
 @Component
 @Slf4j
 public class NacosListener{
-    private static final String bizConfigDev = "biz-config-dev.yaml";
+    private static final String BIZ_CONFIG_DEV = "biz-config-dev.yaml";
 
-    private static final String group = "DEFAULT_GROUP";
+    private static final String GROUP = "DEFAULT_GROUP";
 
-    private static final String toMailUser="1352425876@qq.com";
-    private static final String subject="配置发生变化";
+    private static final String TO_MAIL_USER="1352425876@qq.com";
+    private static final String SUBJECT="配置发生变化";
 
-    private static final String logLevelDemotion="logLevelDemotion";
-    private static final String logLevelDemotionFlag="true";
+    private static final String LOG_LEVEL_DEMOTION="logLevelDemotion";
 
     @Resource
     private ConfigService configService;
@@ -57,15 +56,15 @@ public class NacosListener{
     private MailUtils mailUtils;
 
     @PostConstruct
-    public void init() throws NacosException, IOException {
+    public void init() throws NacosException {
 
         ConcurrentHashMap<String, Object> oldCacheValueMap = bizConfigUtils.getCacheValueMap();
 
         ConcurrentHashMap<String, Object> newCacheValueMap =new ConcurrentHashMap<>();
 
-        String config = null;
+        String config = "";
         try {
-            config = configService.getConfig(bizConfigDev, group, 3000);
+            config = configService.getConfig(BIZ_CONFIG_DEV, GROUP, 3000);
         } catch (NacosException e) {
             e.printStackTrace();
         }
@@ -85,7 +84,7 @@ public class NacosListener{
 
         configMapChange(oldCacheValueMap,newCacheValueMap);
 
-        configService.addListener(bizConfigDev, group, new Listener() {
+        configService.addListener(BIZ_CONFIG_DEV, GROUP, new Listener() {
             @Override
             public Executor getExecutor() {
                 return null;
@@ -96,9 +95,9 @@ public class NacosListener{
                 ConcurrentHashMap<String, Object> oldCacheValueMap = bizConfigUtils.getCacheValueMap();
                 ConcurrentHashMap<String, Object> newCacheValueMap = new ConcurrentHashMap<>();
                 log.info("nacos config change value={}", value);
-                String config = null;
+                String config = "";
                 try {
-                    config = configService.getConfig(bizConfigDev, group, 3000);
+                    config = configService.getConfig(BIZ_CONFIG_DEV, GROUP, 3000);
                 } catch (NacosException e) {
                     e.printStackTrace();
                 }
@@ -119,7 +118,7 @@ public class NacosListener{
                 configMapChange(oldCacheValueMap,newCacheValueMap);
 
                 //修改日志级别
-                setLogLevelDemotion(bizConfigUtils.getStringValue(logLevelDemotion));
+                setLogLevelDemotion(bizConfigUtils.getStringValue(LOG_LEVEL_DEMOTION));
             }
         });
     }
@@ -150,6 +149,6 @@ public class NacosListener{
     public void configMapChange(ConcurrentHashMap oldConcurrentHashMap,ConcurrentHashMap newConcurrentHashMap){
         String message = "old="+ JSONObject.toJSONString(oldConcurrentHashMap)+";\n"+"new="+JSONObject.toJSONString(newConcurrentHashMap);
         log.info("bizConfig change old={},new={}",oldConcurrentHashMap,newConcurrentHashMap);
-        mailUtils.sendSimpleMail(toMailUser,subject,message);
+        mailUtils.sendSimpleMail(TO_MAIL_USER,SUBJECT,message);
     }
 }
