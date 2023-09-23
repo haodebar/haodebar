@@ -4,8 +4,6 @@ import ch.qos.logback.classic.Level;
 import ch.qos.logback.classic.Logger;
 import ch.qos.logback.classic.turbo.TurboFilter;
 import ch.qos.logback.core.spi.FilterReply;
-import com.chaoyue.haodebar.utils.BizConfigUtils;
-import lombok.Data;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.MDC;
 import org.slf4j.Marker;
@@ -22,21 +20,11 @@ import java.util.UUID;
  * @version: version 1.0
  * @dec: 全局traceId
  */
-@Data
 public class TraceIdTurboFilter extends TurboFilter {
     private static final String TRACE_ID = "traceId";
 
-    private BizConfigUtils bizConfigUtils;
-
     @Override
     public FilterReply decide(Marker marker, Logger logger, Level level, String s, Object[] objects, Throwable throwable) {
-
-        if (bizConfigUtils != null) {
-            String logLevelDemotion = bizConfigUtils.getStringValue("logLevelDemotion");
-            if ("true".equals(logLevelDemotion)) {
-                return FilterReply.DENY;
-            }
-        }
         String traceId = Context.getParameter(TRACE_ID, null);
         if (StringUtils.isEmpty(traceId)) {
             traceId = MDC.get(TRACE_ID);

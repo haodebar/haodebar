@@ -56,6 +56,11 @@ public class UserController implements UserControllerApi {
         RLock lock = redissonClient.getLock("aaa");
         lock.tryLock();
 
+        if(log.isInfoEnabled()){
+            log.info("log info");
+        }
+
+        log.error("log error");
         mailUtils.sendSimpleMail("1352425876@qq.com","test","你是好人");
         UserModel model = new UserModel();
         model.setVersion("版本");
