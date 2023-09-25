@@ -1,6 +1,6 @@
 package com.chaoyue.haodebar.api.service;
 
-import com.chaoyue.common.utils.Result;
+import com.chaoyue.common.base.Result;
 
 /**
  * Created by IntelliJ IDEA.

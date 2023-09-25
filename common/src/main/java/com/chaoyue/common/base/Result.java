@@ -1,4 +1,4 @@
-package com.chaoyue.common.utils;
+package com.chaoyue.common.base;
 
 /**
  * Created by IntelliJ IDEA.

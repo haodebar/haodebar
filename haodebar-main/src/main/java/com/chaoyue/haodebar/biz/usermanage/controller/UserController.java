@@ -1,14 +1,14 @@
 package com.chaoyue.haodebar.biz.usermanage.controller;
 
-import com.chaoyue.common.utils.Result;
+import com.chaoyue.common.base.Result;
 import com.chaoyue.haodebar.api.model.UserModel;
 import com.chaoyue.haodebar.biz.usermanage.api.UserControllerApi;
 import com.chaoyue.haodebar.biz.usermanage.domain.UserReqDto;
 import com.chaoyue.haodebar.biz.usermanage.model.UserElasticModel;
-import com.chaoyue.haodebar.utils.ElasticSearchUtils;
+import com.chaoyue.haodebar.tool.ElasticSearchUtils;
 import com.chaoyue.haodebar.mq.MqProducerProcessor;
 import com.chaoyue.haodebar.api.service.UserService;
-import com.chaoyue.haodebar.utils.MailUtils;
+import com.chaoyue.haodebar.tool.MailUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.redisson.api.RLock;
 import org.redisson.api.RedissonClient;

@@ -1,4 +1,4 @@
-package com.chaoyue.haodebar.utils;
+package com.chaoyue.haodebar.tool;
 
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;

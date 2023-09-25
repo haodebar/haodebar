@@ -1,6 +1,6 @@
 package com.chaoyue.haodebar.biz.example.api;
 
-import com.chaoyue.common.utils.Result;
+import com.chaoyue.common.base.Result;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 

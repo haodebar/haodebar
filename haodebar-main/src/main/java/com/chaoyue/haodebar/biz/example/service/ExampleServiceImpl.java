@@ -1,11 +1,11 @@
 package com.chaoyue.haodebar.biz.example.service;
 
 import com.chaoyue.common.base.service.impl.BaseServiceImpl;
-import com.chaoyue.common.utils.Result;
+import com.chaoyue.common.base.Result;
 import com.chaoyue.haodebar.api.model.ExampleModel;
 import com.chaoyue.haodebar.api.service.ExampleService;
 import com.chaoyue.haodebar.biz.example.dao.ExampleDao;
-import com.chaoyue.haodebar.utils.BizConfigUtils;
+import com.chaoyue.haodebar.tool.BizConfigUtils;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 

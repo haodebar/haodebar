@@ -1,4 +1,4 @@
-package com.chaoyue.haodebar.utils;
+package com.chaoyue.haodebar.tool;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +10,6 @@ import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Component;
 
-import javax.annotation.Resource;
 import javax.mail.internet.MimeMessage;
 import java.util.Objects;
 
