@@ -8,7 +8,7 @@ package com.chaoyue.common.utils;
  * @version: version 1.0
  * @dec: 脱敏格式设置工具类
  */
-public class DesensitizedUtils {
+public class DesensitizedUtil {
     /**
      * 对字符串进行脱敏操作
      *

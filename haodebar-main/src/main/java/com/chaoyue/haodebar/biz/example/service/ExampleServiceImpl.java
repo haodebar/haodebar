@@ -6,6 +6,7 @@ import com.chaoyue.haodebar.api.model.ExampleModel;
 import com.chaoyue.haodebar.api.service.ExampleService;
 import com.chaoyue.haodebar.biz.example.dao.ExampleDao;
 import com.chaoyue.haodebar.tool.BizConfigUtils;
+import com.jd.lmarket.common.util.BeanCopierUtil;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 

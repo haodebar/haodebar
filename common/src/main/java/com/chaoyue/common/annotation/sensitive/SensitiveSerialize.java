@@ -1,6 +1,6 @@
 package com.chaoyue.common.annotation.sensitive;
 
-import com.chaoyue.common.utils.DesensitizedUtils;
+import com.chaoyue.common.utils.DesensitizedUtil;
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.databind.BeanProperty;
 import com.fasterxml.jackson.databind.JsonMappingException;
@@ -50,16 +50,16 @@ public class SensitiveSerialize extends JsonSerializer<String> implements Contex
                           final SerializerProvider serializerProvider) throws IOException {
         switch (sensitiveTypeEnum) {
             case CUSTOMER:
-                jsonGenerator.writeString(DesensitizedUtils.desValue(origin, prefixNoMaskLen, suffixNoMaskLen, symbol));
+                jsonGenerator.writeString(DesensitizedUtil.desValue(origin, prefixNoMaskLen, suffixNoMaskLen, symbol));
                 break;
             case NAME:
-                jsonGenerator.writeString(DesensitizedUtils.chineseName(origin));
+                jsonGenerator.writeString(DesensitizedUtil.chineseName(origin));
                 break;
             case ID_NUM:
-                jsonGenerator.writeString(DesensitizedUtils.idCardNum(origin));
+                jsonGenerator.writeString(DesensitizedUtil.idCardNum(origin));
                 break;
             case PHONE_NUM:
-                jsonGenerator.writeString(DesensitizedUtils.mobilePhone(origin));
+                jsonGenerator.writeString(DesensitizedUtil.mobilePhone(origin));
                 break;
             default:
                 throw new IllegalArgumentException("unknown sensitive type enum " + sensitiveTypeEnum);
