@@ -1,5 +1,7 @@
 package com.chaoyue.common.base;
 
+import com.chaoyue.common.constant.ResultCodeEnum;
+
 /**
  * Created by IntelliJ IDEA.
  *
@@ -31,18 +33,9 @@ public class Result<T> {
     public Result() {
     }
 
-    /**
-     * 成功
-     */
-    public static final int ERRCODE_SUCCESS = 0;
-    /**
-     * 失败
-     */
-    public static final int ERRCODE_FAIL = 1;
-
-    private int status;//状态
-    private String msg;// 消息提示
-    private T data; //数据集合
+    private int status;
+    private String msg;
+    private T data;
 
     public int getStatus() {
         return status;
@@ -72,16 +65,16 @@ public class Result<T> {
     /***
      * 返回访问成功,无消息提醒
      */
-    public static <T> Result<T> createOK() {
-        Result<T> ok = new Result(ERRCODE_SUCCESS, "");
+    public static <T> Result<T> createOk() {
+        Result<T> ok = new Result(ResultCodeEnum.SUCCESS.getCode(), ResultCodeEnum.SUCCESS.getMsg());
         return ok;
     }
 
     /**
      * 返回访问失败,返回数据集合
      */
-    public static <T> Result<T> createOK(T data) {
-        Result<T> ok = createOK();
+    public static <T> Result<T> createOk(T data) {
+        Result<T> ok = createOk();
         ok.setData(data);
         return ok;
     }
@@ -89,15 +82,15 @@ public class Result<T> {
     /***
      * 返回访问成功,返回指定消息提醒
      */
-    public static <T> Result<T> createOK(String msg) {
-        Result<T> ok = new Result(ERRCODE_SUCCESS,msg);
+    public static <T> Result<T> createOk(String msg) {
+        Result<T> ok = new Result(ResultCodeEnum.SUCCESS.getCode(),msg);
         return ok;
     }
 
     /***
      * 返回访问成功,返回指定code 与消息提醒
      */
-    public static <T> Result<T> createOK(int code,String msg) {
+    public static <T> Result<T> createOk(int code,String msg) {
         Result<T> ok = new Result(code,msg);
         return ok;
     }
@@ -106,7 +99,7 @@ public class Result<T> {
      * 返回访问失败,无消息提醒
      */
     public static <T> Result<T> createFail() {
-        Result<T> fail = new Result(ERRCODE_FAIL, "");
+        Result<T> fail = new Result(ResultCodeEnum.ERROR.getCode(), ResultCodeEnum.FAILED.getMsg());
         return fail;
     }
 
@@ -114,7 +107,7 @@ public class Result<T> {
      * 返回访问失败,传递消息提醒
      */
     public static <T> Result<T> createFail(String message) {
-        Result<T> fail = new Result(ERRCODE_FAIL, "");
+        Result<T> fail = new Result(ResultCodeEnum.ERROR.getCode(), "");
         fail.setMsg(message);
         return fail;
     }
@@ -128,7 +121,7 @@ public class Result<T> {
      * 返回访问失败,传递消息提醒,数据集合
      */
     public static <T> Result<T> createFail(String message, T data){
-    	Result<T> fail = new Result(ERRCODE_FAIL, "");
+    	Result<T> fail = new Result(ResultCodeEnum.ERROR.getCode(), "");
     	fail.setMsg(message);
     	fail.setData(data);
     	return fail;

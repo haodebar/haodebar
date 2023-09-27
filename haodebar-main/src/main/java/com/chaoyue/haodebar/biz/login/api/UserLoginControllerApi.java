@@ -20,4 +20,10 @@ public interface UserLoginControllerApi{
 
     @ApiOperation(value = "用户退出",notes = "用户退出")
     Result logout();
+
+    @ApiOperation(value = "用户登陆",notes = "邮件登陆")
+    Result loginEmail();
+
+    @ApiOperation(value = "用户登陆",notes = "手机登陆")
+    Result loginPhone();
 }

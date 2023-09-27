@@ -26,4 +26,10 @@ public class ExampleController implements ExampleControllerApi {
     public Result test() {
         return exampleService.testMethod();
     }
+
+    @Override
+    @PostMapping("/testAdvice")
+    public Result testAdvice() {
+        return exampleService.testMethodAdvice();
+    }
 }

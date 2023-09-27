@@ -16,4 +16,7 @@ import io.swagger.annotations.ApiOperation;
 public interface ExampleControllerApi {
     @ApiOperation(value = "测试使用",notes = "这是测试接口")
     Result test();
+
+    @ApiOperation(value = "测试异常切面",notes = "这是测试接口")
+    Result testAdvice();
 }

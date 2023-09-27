@@ -79,14 +79,14 @@ public class UserController implements UserControllerApi {
         restTemplate.save(userElasticModel);
 
         mqProcessor.send("我来了");
-        return Result.createOK(model);
+        return Result.createOk(model);
     }
 
     @Override
     @PostMapping("deleteUser")
     public Result<Boolean> deleteUser(@RequestBody UserReqDto userReqDto) {
         log.info("enter deleteUser controller,param={}",userReqDto);
-        return Result.createOK(userService.removeById(userReqDto.getUserId()));
+        return Result.createOk(userService.removeById(userReqDto.getUserId()));
     }
 
     @Override

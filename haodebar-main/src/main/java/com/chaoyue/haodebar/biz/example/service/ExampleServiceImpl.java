@@ -2,11 +2,12 @@ package com.chaoyue.haodebar.biz.example.service;
 
 import com.chaoyue.common.base.service.impl.BaseServiceImpl;
 import com.chaoyue.common.base.Result;
+import com.chaoyue.common.constant.ResultCodeEnum;
+import com.chaoyue.common.exception.BusinessException;
 import com.chaoyue.haodebar.api.model.ExampleModel;
 import com.chaoyue.haodebar.api.service.ExampleService;
 import com.chaoyue.haodebar.biz.example.dao.ExampleDao;
 import com.chaoyue.haodebar.tool.BizConfigUtils;
-import com.jd.lmarket.common.util.BeanCopierUtil;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
@@ -31,6 +32,11 @@ public class ExampleServiceImpl extends BaseServiceImpl<ExampleDao, ExampleModel
 
     @Override
     public Result testMethod() {
-        return Result.createOK(bizConfigUtils.getStringValue("test"));
+        return Result.createOk(bizConfigUtils.getStringValue("test"));
+    }
+
+    @Override
+    public Result testMethodAdvice() {
+        throw  new BusinessException(ResultCodeEnum.FAILED.getCode(),ResultCodeEnum.FAILED.getMsg());
     }
 }

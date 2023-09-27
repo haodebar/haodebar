@@ -26,4 +26,17 @@ public class UserLoginController implements UserLoginControllerApi {
     public Result logout() {
         return null;
     }
+
+    @Override
+    @PostMapping("/loginEmail")
+    public Result loginEmail() {
+        return null;
+    }
+
+    @Override
+    @PostMapping("/loginPhone")
+    public Result loginPhone() {
+        return null;
+    }
+
 }

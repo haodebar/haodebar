@@ -6,16 +6,22 @@ import com.chaoyue.common.base.Result;
  * Created by IntelliJ IDEA.
  *
  * @author: xuzhichao8
- * @date: 2023/9/17 16:33
+ * @date: 2023/9/25 23:55
  * @version: version 1.0
  * @dec: 描述信息
  */
-public interface ExampleService {
+public interface UserLoginService {
+
     /**
-     * 这是测试方法
+     * 手机号登陆
      * @return
      */
-    Result testMethod();
+    Result loginByPhone();
 
-    Result testMethodAdvice();
+    /**
+     * 邮件登陆
+     * @return
+     */
+    Result loginByEmail();
+
 }
