@@ -22,6 +22,7 @@
         <elasticsearch.version>7.6.2</elasticsearch.version>
         <redission.verison>3.23.3</redission.verison>
         <fastjson.verison>1.2.47</fastjson.verison>
+        <prometheus.version>1.0.5</prometheus.version>
     </properties>
 
     <dependencies>
@@ -143,6 +144,16 @@
             <artifactId>fastjson</artifactId>
             <version>${fastjson.verison}</version>
         </dependency>
+        <!--prometheus 集成-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.micrometer</groupId>
+            <artifactId>micrometer-registry-prometheus</artifactId>
+        </dependency>
+        <!--prometheus 集成-->
     </dependencies>
     <profiles>
         <!--开发环境-->
@@ -172,34 +183,6 @@
                 <mvn.spring.cloud.nacos.config.server-addr>127.0.0.1:8848</mvn.spring.cloud.nacos.config.server-addr>
                 <mvn.spring.cloud.nacos.config.namespace>742dced6-2eb9-4700-8cbc-20ecd396edc8</mvn.spring.cloud.nacos.config.namespace>
                 <mvn.spring.cloud.nacos.discovery.namespace>742dced6-2eb9-4700-8cbc-20ecd396edc8</mvn.spring.cloud.nacos.discovery.namespace>
-                <mvn.spring.cloud.nacos.discovery.ip>127.0.0.1</mvn.spring.cloud.nacos.discovery.ip>
-                <mvn.spring.cloud.nacos.discovery.port>8848</mvn.spring.cloud.nacos.discovery.port>
-            </properties>
-        </profile>
-        <!--测试环境-->
-        <profile>
-            <id>test</id>
-            <properties>
-                <mvn.spring.cloud.nacos.username>nacos</mvn.spring.cloud.nacos.username>
-                <mvn.spring.cloud.nacos.password>nacos</mvn.spring.cloud.nacos.password>
-                <mvn.spring.cloud.nacos.server-addr>127.0.0.1:8848</mvn.spring.cloud.nacos.server-addr>
-                <mvn.spring.cloud.nacos.config.server-addr>127.0.0.1:8848</mvn.spring.cloud.nacos.config.server-addr>
-                <mvn.spring.cloud.nacos.config.namespace>742dced6-2eb9-4700-8cbc-20ecd396edc8</mvn.spring.cloud.nacos.config.namespace>
-                <mvn.spring.cloud.nacos.discovery.namespace>742dced6-2eb9-4700-8cbc-20ecd396edc8</mvn.spring.cloud.nacos.discovery.namespace>
-                <mvn.spring.cloud.nacos.discovery.ip>127.0.0.1</mvn.spring.cloud.nacos.discovery.ip>
-                <mvn.spring.cloud.nacos.discovery.port>8848</mvn.spring.cloud.nacos.discovery.port>
-            </properties>
-        </profile>
-        <!--测试环境-->
-        <profile>
-            <id>test</id>
-            <properties>
-                <mvn.spring.cloud.nacos.username>nacos</mvn.spring.cloud.nacos.username>
-                <mvn.spring.cloud.nacos.password>nacos</mvn.spring.cloud.nacos.password>
-                <mvn.spring.cloud.nacos.server-addr>127.0.0.1:8848</mvn.spring.cloud.nacos.server-addr>
-                <mvn.spring.cloud.nacos.config.server-addr>127.0.0.1:8848</mvn.spring.cloud.nacos.config.server-addr>
-                <mvn.spring.cloud.nacos.config.namespace>7038b6c2-1076-4c06-9efe-d6d5e3de2e53</mvn.spring.cloud.nacos.config.namespace>
-                <mvn.spring.cloud.nacos.discovery.namespace>7038b6c2-1076-4c06-9efe-d6d5e3de2e53</mvn.spring.cloud.nacos.discovery.namespace>
                 <mvn.spring.cloud.nacos.discovery.ip>127.0.0.1</mvn.spring.cloud.nacos.discovery.ip>
                 <mvn.spring.cloud.nacos.discovery.port>8848</mvn.spring.cloud.nacos.discovery.port>
             </properties>
