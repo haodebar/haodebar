@@ -21,7 +21,7 @@
         <mysql.version>8.0.33</mysql.version>
         <elasticsearch.version>7.6.2</elasticsearch.version>
         <redission.verison>3.23.3</redission.verison>
-        <fastjson.verison>1.2.47</fastjson.verison>
+        <fastjson.verison>1.2.83</fastjson.verison>
         <prometheus.version>1.0.5</prometheus.version>
     </properties>
 
