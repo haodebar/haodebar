@@ -33,9 +33,9 @@ spring:
         # 开启监听和自动刷新，动态感知配置变化，默认值：true
         refresh-enabled: true
         # AccessKey
-        #access-key: 123
+        #access-key: 1234
         # SecretKey
-        #secret-key: 123
+        #secret-key: 1234
         # 引入共享配置（同一分组）
         shared-configs:
           # 配置支持共享的 Data Id
