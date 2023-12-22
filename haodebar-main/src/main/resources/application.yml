@@ -4,4 +4,4 @@ server:
     context-path: /haodebar
 logging:
   file:
-    path: D:\xuzhichao8
+    path: C:\xuzhichao8
