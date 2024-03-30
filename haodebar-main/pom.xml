@@ -181,8 +181,8 @@
                 <mvn.spring.cloud.nacos.password>nacos</mvn.spring.cloud.nacos.password>
                 <mvn.spring.cloud.nacos.server-addr>127.0.0.1:8848</mvn.spring.cloud.nacos.server-addr>
                 <mvn.spring.cloud.nacos.config.server-addr>127.0.0.1:8848</mvn.spring.cloud.nacos.config.server-addr>
-                <mvn.spring.cloud.nacos.config.namespace>742dced6-2eb9-4700-8cbc-20ecd396edc8</mvn.spring.cloud.nacos.config.namespace>
-                <mvn.spring.cloud.nacos.discovery.namespace>742dced6-2eb9-4700-8cbc-20ecd396edc8</mvn.spring.cloud.nacos.discovery.namespace>
+                <mvn.spring.cloud.nacos.config.namespace>5848895e-13be-40b8-b731-b3eaa507da8a</mvn.spring.cloud.nacos.config.namespace>
+                <mvn.spring.cloud.nacos.discovery.namespace>5848895e-13be-40b8-b731-b3eaa507da8a</mvn.spring.cloud.nacos.discovery.namespace>
                 <mvn.spring.cloud.nacos.discovery.ip>127.0.0.1</mvn.spring.cloud.nacos.discovery.ip>
                 <mvn.spring.cloud.nacos.discovery.port>8848</mvn.spring.cloud.nacos.discovery.port>
             </properties>
