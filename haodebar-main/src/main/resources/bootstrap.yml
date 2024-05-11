@@ -55,6 +55,9 @@ spring:
           - data-id: biz-config-${spring.profiles.active}.yaml
             # 配置 Data Id 所在分组，缺省默认 DEFAULT_GROUP
             group: DEFAULT_GROUP
+          - data-id: ip-access-config-${spring.profiles.active}.yaml
+            # 配置 Data Id 所在分组，缺省默认 DEFAULT_GROUP
+            group: DEFAULT_GROUP
             # 配置Data Id 在配置变更时，是否动态刷新，缺省默认 false
             refresh: true
 

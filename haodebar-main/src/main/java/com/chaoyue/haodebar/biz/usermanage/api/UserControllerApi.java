@@ -1,5 +1,6 @@
 package com.chaoyue.haodebar.biz.usermanage.api;
 
+import com.chaoyue.common.annotation.access.IpAccessPermission;
 import com.chaoyue.common.base.Result;
 import com.chaoyue.haodebar.api.model.UserModel;
 import com.chaoyue.haodebar.biz.usermanage.domain.UserReqDto;

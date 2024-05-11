@@ -3,10 +3,7 @@ package com.chaoyue.common.annotation.sensitive;
 import com.fasterxml.jackson.annotation.JacksonAnnotationsInside;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-import java.lang.annotation.ElementType;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-import java.lang.annotation.Target;
+import java.lang.annotation.*;
 
 /**
  * Created by IntelliJ IDEA.
@@ -20,6 +17,8 @@ import java.lang.annotation.Target;
 @Target(ElementType.FIELD)
 @JacksonAnnotationsInside
 @JsonSerialize(using = SensitiveSerialize.class)
+@Documented
+@Inherited
 public @interface Sensitive {
 
     /**

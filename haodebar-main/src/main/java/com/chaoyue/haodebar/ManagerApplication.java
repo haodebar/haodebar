@@ -6,6 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.stream.annotation.EnableBinding;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 /**
  * Created by IntelliJ IDEA.
@@ -20,6 +21,7 @@ import org.springframework.context.annotation.ComponentScan;
 @ComponentScan("com.chaoyue")
 @EnableDiscoveryClient
 @EnableBinding
+@EnableWebMvc
 public class ManagerApplication {
 
     public static void main(String[] args) {

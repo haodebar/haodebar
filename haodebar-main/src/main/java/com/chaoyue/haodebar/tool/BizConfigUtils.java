@@ -18,7 +18,10 @@ import java.util.concurrent.ConcurrentHashMap;
 @Slf4j
 @Data
 public class BizConfigUtils {
-    private final static String bizConfigDev = "biz-config-dev.yaml";
+
+    private  final String bizConfig = "biz-config-dev.yaml";
+
+    private  final String group = "DEFAULT_GROUP";
     /**
      * 本地缓存Map
      */

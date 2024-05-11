@@ -1,5 +1,6 @@
 package com.chaoyue.haodebar.tool;
 
+import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -23,7 +24,11 @@ import java.util.Objects;
  */
 @Component
 @Slf4j
+@Data
 public class MailUtils {
+
+    private  final String toMailUser="1352425876@qq.com";
+    private  final String subject="配置发生变化";
 
     @Autowired
     private JavaMailSender javaMailSender;

@@ -102,7 +102,22 @@ public enum ResultCodeEnum {
     /**
      * 没有权限
      */
-    NO_PERMISSION(403, "当前用户无该接口权限");
+    NO_PERMISSION_DEFAULT(403, "没有权限"),
+    /**
+     * 没有权限
+     */
+    NO_PERMISSION_ONE(403, "访问受限,请求IP不在白名单中"),
+    /**
+     * 没有权限
+     */
+    NO_PERMISSION_TWO(403, "访问受限,配置了白名单,又存在黑名单"),
+    /**
+     * 没有权限
+     */
+    NO_PERMISSION_TREE(403, "访问受限,请求IP在黑名单中"),
+
+    ;
+
 
     public int code;
 

@@ -40,11 +40,12 @@ public class RedisClientUtils {
     }
 
     /**
-     *
+     * set string类型
      * @param key
      * @param value
      */
     public void setString(String key,String value){
-
+        redisTemplate.opsForValue().set(key,value);
     }
+
 }

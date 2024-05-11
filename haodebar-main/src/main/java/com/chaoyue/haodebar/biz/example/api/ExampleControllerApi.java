@@ -1,6 +1,8 @@
 package com.chaoyue.haodebar.biz.example.api;
 
+import com.chaoyue.common.annotation.access.IpAccessPermission;
 import com.chaoyue.common.base.Result;
+import com.chaoyue.haodebar.constant.IpAccessKeyConstant;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
@@ -19,4 +21,8 @@ public interface ExampleControllerApi {
 
     @ApiOperation(value = "测试异常切面",notes = "这是测试接口")
     Result testAdvice();
+
+    @ApiOperation(value = "测试IP黑白名单",notes = "这是测试接口")
+    @IpAccessPermission(whiteIpsKey = IpAccessKeyConstant.DEFAULT_WHITE,blackIpsKey=IpAccessKeyConstant.DEFAULT_BLACK)
+    Result testIpAccess();
 }

@@ -32,4 +32,11 @@ public class ExampleController implements ExampleControllerApi {
     public Result testAdvice() {
         return exampleService.testMethodAdvice();
     }
+
+    @Override
+    @PostMapping("/testIpAccess")
+
+    public Result testIpAccess() {
+        return null;
+    }
 }
