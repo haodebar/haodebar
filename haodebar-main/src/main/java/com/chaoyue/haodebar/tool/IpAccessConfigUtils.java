@@ -11,9 +11,12 @@ import java.util.concurrent.ConcurrentHashMap;
 @Slf4j
 @Data
 public class IpAccessConfigUtils {
+    private  final String ipSplit = ";";
+
     private  final String bizConfig = "ip-access-config-dev.yaml";
 
     private  final String group = "DEFAULT_GROUP";
+
 
     /**
      * 本地缓存Map

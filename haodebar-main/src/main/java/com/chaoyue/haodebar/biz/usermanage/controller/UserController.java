@@ -20,6 +20,7 @@ import org.springframework.data.elasticsearch.core.ElasticsearchRestTemplate;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
@@ -33,7 +34,8 @@ import javax.annotation.Resource;
  * @dec: 描述信息
  */
 @Slf4j
-@RestController("/userManager")
+@RestController()
+@RequestMapping("/userManager")
 public class UserController implements UserControllerApi {
 
     @Resource

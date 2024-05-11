@@ -3,6 +3,7 @@ package com.chaoyue.haodebar.biz.login.controller;
 import com.chaoyue.common.base.Result;
 import com.chaoyue.haodebar.biz.login.api.UserLoginControllerApi;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -13,7 +14,8 @@ import org.springframework.web.bind.annotation.RestController;
  * @version: version 1.0
  * @dec: 描述信息
  */
-@RestController("/login")
+@RestController()
+@RequestMapping("/login")
 public class UserLoginController implements UserLoginControllerApi {
     @Override
     @PostMapping("/login")

@@ -4,6 +4,7 @@ import com.chaoyue.common.base.Result;
 import com.chaoyue.haodebar.api.service.ExampleService;
 import com.chaoyue.haodebar.biz.example.api.ExampleControllerApi;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
@@ -16,7 +17,8 @@ import javax.annotation.Resource;
  * @version: version 1.0
  * @dec: 描述信息
  */
-@RestController("/example")
+@RestController()
+@RequestMapping("/example")
 public class ExampleController implements ExampleControllerApi {
     @Resource
     private ExampleService exampleService;

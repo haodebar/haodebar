@@ -95,7 +95,9 @@ public class NacosListener{
             public void receiveConfigInfo(String value) {
                 ConcurrentHashMap<String, Object> oldCacheValueMap = bizConfigUtils.getCacheValueMap();
                 ConcurrentHashMap<String, Object> newCacheValueMap = new ConcurrentHashMap<>();
-                log.info("nacos config change value={}", value);
+                if(log.isInfoEnabled()){
+                    log.info("nacos config change value={}", value);
+                }
                 String config = "";
                 try {
                     config = configService.getConfig(bizConfigUtils.getBizConfig(), bizConfigUtils.getGroup(), 3000);
@@ -145,8 +147,12 @@ public class NacosListener{
         //遍历所有参数生成MAP
         for (Map.Entry<Object, Object> entry : properties.entrySet()) {
             String key = entry.getKey().toString().trim();
-            String[] value =entry.getValue().toString().split(";");
-            newCacheValueMap.put(key, new ArrayList<>(Arrays.asList(value)));
+            String ipString =entry.getValue().toString();
+            if(StringUtils.isNotBlank(ipString)){
+                String[] value =ipString.split(ipAccessConfigUtils.getIpSplit());
+                newCacheValueMap.put(key, new ArrayList<>(Arrays.asList(value)));
+            }
+
         }
         ipAccessConfigUtils.setIpAccessListMap(newCacheValueMap);
 
@@ -162,7 +168,9 @@ public class NacosListener{
             public void receiveConfigInfo(String value) {
                 ConcurrentHashMap<String, List<String>> oldCacheValueMap = ipAccessConfigUtils.getIpAccessListMap();
                 ConcurrentHashMap<String, List<String>> newCacheValueMap = new ConcurrentHashMap<>();
-                log.info("nacos config change value={}", value);
+                if(log.isInfoEnabled()){
+                    log.info("nacos config change value={}", value);
+                }
                 String config = "";
                 try {
                     config = configService.getConfig(ipAccessConfigUtils.getBizConfig(), ipAccessConfigUtils.getGroup(), 3000);
@@ -179,8 +187,11 @@ public class NacosListener{
                 //遍历所有参数生成MAP
                 for (Map.Entry<Object, Object> entry : properties.entrySet()) {
                     String key = entry.getKey().toString().trim();
-                    String[] valueTwo =entry.getValue().toString().split(";");
-                    newCacheValueMap.put(key, new ArrayList<>(Arrays.asList(valueTwo)));
+                    String ipString =entry.getValue().toString();
+                    if(StringUtils.isNotBlank(ipString)){
+                        String[] valueTwo =ipString.split(ipAccessConfigUtils.getIpSplit());
+                        newCacheValueMap.put(key, new ArrayList<>(Arrays.asList(valueTwo)));
+                    }
                 }
 
                 ipAccessConfigUtils.setIpAccessListMap(newCacheValueMap);
@@ -214,7 +225,9 @@ public class NacosListener{
 
     public void configMapChange(ConcurrentHashMap oldConcurrentHashMap,ConcurrentHashMap newConcurrentHashMap){
         String message = "old="+ JSONObject.toJSONString(oldConcurrentHashMap)+";\n"+"new="+JSONObject.toJSONString(newConcurrentHashMap);
-        log.info("bizConfig change old={},new={}",oldConcurrentHashMap,newConcurrentHashMap);
+        if(log.isInfoEnabled()){
+            log.info("bizConfig change old={},new={}",oldConcurrentHashMap,newConcurrentHashMap);
+        }
         mailUtils.sendSimpleMail(mailUtils.getToMailUser(),mailUtils.getSubject(),message);
     }
 }
