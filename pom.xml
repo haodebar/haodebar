@@ -16,11 +16,11 @@
     </modules>
     <!--公有版本-->
     <properties>
-        <spring-boot>2.3.12.RELEASE</spring-boot>
-        <spring-cloud.version>Hoxton.SR12</spring-cloud.version>
-        <spring-cloud.alibaba>2.2.9.RELEASE</spring-cloud.alibaba>
+        <spring-boot>2.6.3</spring-boot>
+        <spring-cloud.version>2021.0.1</spring-cloud.version>
+        <spring-cloud.alibaba>2021.0.1.0</spring-cloud.alibaba>
 
-        <mybatisplus.spring.boot.version>3.5.2</mybatisplus.spring.boot.version>
+        <mybatisplus.spring.boot.version>3.5.6</mybatisplus.spring.boot.version>
         <lombok.version>1.18.24</lombok.version>
         <jackson.core>2.13.3</jackson.core>
         <commons.lang3>3.12.0</commons.lang3>

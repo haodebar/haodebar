@@ -17,15 +17,20 @@
 
     <properties>
         <swagger.version>3.0.0</swagger.version>
-        <knife4j.version>3.0.3</knife4j.version>
+        <knife4j.version>4.4.0</knife4j.version>
         <mysql.version>8.0.33</mysql.version>
-        <elasticsearch.version>7.6.2</elasticsearch.version>
+        <elasticsearch.version>7.15.2</elasticsearch.version>
         <redission.verison>3.23.3</redission.verison>
         <fastjson.verison>1.2.47</fastjson.verison>
         <prometheus.version>1.0.5</prometheus.version>
     </properties>
 
     <dependencies>
+        <!-- 必须添加bootstrap支持 -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-bootstrap</artifactId>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -68,7 +73,7 @@
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>${mysql.version}</version>
-            <!--<scope>runtime</scope>-->
+            <scope>runtime</scope>
         </dependency>
 
         <dependency>
@@ -82,10 +87,17 @@
             <artifactId>springfox-swagger-ui</artifactId>
             <version>${swagger.version}</version>
         </dependency>
+
+        <!--<dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-boot-starter</artifactId>
+            <version>${swagger.version}</version>
+        </dependency>-->
+
         <dependency>
             <groupId>com.github.xiaoymin</groupId>
-            <artifactId>knife4j-spring-boot-starter</artifactId>
-            <version>${knife4j.version}</version>
+            <artifactId>knife4j-openapi3-spring-boot-starter</artifactId>
+            <version>4.0.0</version>
         </dependency>
 
         <dependency>
@@ -167,8 +179,8 @@
                 <mvn.spring.cloud.nacos.password>nacos</mvn.spring.cloud.nacos.password>
                 <mvn.spring.cloud.nacos.server-addr>127.0.0.1:8848</mvn.spring.cloud.nacos.server-addr>
                 <mvn.spring.cloud.nacos.config.server-addr>127.0.0.1:8848</mvn.spring.cloud.nacos.config.server-addr>
-                <mvn.spring.cloud.nacos.config.namespace>742dced6-2eb9-4700-8cbc-20ecd396edc8</mvn.spring.cloud.nacos.config.namespace>
-                <mvn.spring.cloud.nacos.discovery.namespace>742dced6-2eb9-4700-8cbc-20ecd396edc8</mvn.spring.cloud.nacos.discovery.namespace>
+                <mvn.spring.cloud.nacos.config.namespace>e6e0cf95-56e5-41fe-83ab-136d3f39c000</mvn.spring.cloud.nacos.config.namespace>
+                <mvn.spring.cloud.nacos.discovery.namespace>e6e0cf95-56e5-41fe-83ab-136d3f39c000</mvn.spring.cloud.nacos.discovery.namespace>
                 <mvn.spring.cloud.nacos.discovery.ip>127.0.0.1</mvn.spring.cloud.nacos.discovery.ip>
                 <mvn.spring.cloud.nacos.discovery.port>8848</mvn.spring.cloud.nacos.discovery.port>
             </properties>

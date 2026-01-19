@@ -6,7 +6,7 @@ spring:
     #发送邮件的邮箱地址
     username: 1352425876@qq.com
     #客户端授权码，不是邮箱密码，在qq邮箱设置里面自动生成
-    password: uicwmsfqetytfifb
+    password: zpxfbzzurghegfdg
     # 发送邮件的地址，和上面username一致
     from: 1352425876@qq.com
     protocol: smtp
@@ -18,6 +18,10 @@ spring:
           #端口号465或587
           port: 587
           auth: true
-        starttls:
-          enable: true
-          required: true
+            #465
+            #ssl:
+          #enable: true
+          #587
+          starttls:
+            enable: true
+            required: true
