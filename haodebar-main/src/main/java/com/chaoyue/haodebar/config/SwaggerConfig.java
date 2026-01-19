@@ -21,7 +21,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
  * @dec:
  * 3.0.x访问地址：http://localhost:8080/{context-path}/swagger-ui/index.html
  * 2.9.x访问地址：http://localhost:8080/{context-path}/swagger-ui.html
- * knife4j访问地址:http://localhost::8080/{context-path}/doc.html
+ * knife4j访问地址:http://localhost:8080/{context-path}/doc.html
  */
 @Configuration
 @EnableSwagger2
