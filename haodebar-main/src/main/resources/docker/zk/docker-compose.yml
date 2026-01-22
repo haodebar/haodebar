@@ -1,0 +1,10 @@
+version: "3.6"
+services:
+  zookeeper:
+    command:
+      - "zkServer.sh"
+      - "start-foreground"
+    container_name: "zookeeper"
+    image: "zookeeper:3.9.2"
+    ports:
+      - "2181:2181"

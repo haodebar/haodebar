@@ -1,8 +1,8 @@
 package com.chaoyue.haodebar.biz.login.api;
 
 import com.chaoyue.common.base.Result;
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 
 
 /**
@@ -13,17 +13,17 @@ import io.swagger.annotations.ApiOperation;
  * @version: version 1.0
  * @dec: 描述信息
  */
-@Api(tags = "账号登陆")
+@Tag(name = "用户登录", description = "用户登录相关接口")
 public interface UserLoginControllerApi{
-    @ApiOperation(value = "用户登陆",notes = "用户登陆")
+    @Operation(summary = "用户登录", description = "用户登录")
     Result login();
 
-    @ApiOperation(value = "用户退出",notes = "用户退出")
+    @Operation(summary = "用户退出", description = "用户退出")
     Result logout();
 
-    @ApiOperation(value = "用户登陆",notes = "邮件登陆")
+    @Operation(summary = "邮件登录", description = "邮件登录")
     Result loginEmail();
 
-    @ApiOperation(value = "用户登陆",notes = "手机登陆")
+    @Operation(summary = "手机号登录", description = "手机号登录")
     Result loginPhone();
 }

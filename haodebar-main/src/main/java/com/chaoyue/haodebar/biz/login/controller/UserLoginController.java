@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController()
 @RequestMapping("/login")
-public class UserLoginController implements UserLoginControllerApi {
+public class UserLoginController implements UserLoginControllerApi{
     @Override
     @PostMapping("/login")
     public Result login() {

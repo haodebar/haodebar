@@ -2,7 +2,6 @@ package com.chaoyue.haodebar.Interceptor;
 
 import com.chaoyue.common.annotation.access.IpAccessPermission;
 import com.chaoyue.common.constant.ResultCodeEnum;
-import com.chaoyue.common.exception.BusinessException;
 import com.chaoyue.common.exception.SystemException;
 import com.chaoyue.haodebar.tool.IpAccessConfigUtils;
 import com.chaoyue.haodebar.tool.IpUtils;
@@ -34,6 +33,9 @@ public class IpAccessInterceptor implements HandlerInterceptor {
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         boolean preHandleFlag = true;
 
+        if (!(handler instanceof HandlerMethod)) {
+            return preHandleFlag;
+        }
         HandlerMethod handlerMethod = (HandlerMethod)handler;
 
         IpAccessPermission ipAccessPermission = handlerMethod.getMethodAnnotation(IpAccessPermission.class);
@@ -49,9 +51,8 @@ public class IpAccessInterceptor implements HandlerInterceptor {
             String ip =ipUtils.getIp();
 
 
-            List<String> oldWhiteIpsList = new ArrayList<>(whiteIpsList);
             //如果配置了白名单,只有白名单能访问（去掉黑名单数据）
-            if(!CollectionUtils.isEmpty(oldWhiteIpsList)){
+            if(!CollectionUtils.isEmpty(whiteIpsList)){
                 if(!CollectionUtils.isEmpty(blackIpsList)){
                     whiteIpsList.removeAll(blackIpsList);
                 }

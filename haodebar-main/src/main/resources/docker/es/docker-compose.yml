@@ -1,0 +1,9 @@
+services:
+  elastic:
+    environment:
+      - "discovery.type=single-node"
+    container_name: "elastic"
+    image: "elasticsearch:7.17.17"
+    ports:
+      - "9200:9200"
+version: "3.6"
